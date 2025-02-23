@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
@@ -28,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -111,7 +113,8 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
                                     contentDescription = "Person Icon")
-                            }
+                            },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                         )
                         // DATE OF BIRTH TEXT FIELD
                         Text(
@@ -134,8 +137,9 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                             trailingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.DateRange,
-                                    contentDescription = "Person Icon")
-                            }
+                                    contentDescription = "Calendar")
+                            },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
                     }
                     Row(

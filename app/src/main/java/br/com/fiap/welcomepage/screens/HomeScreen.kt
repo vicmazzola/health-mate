@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -26,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -96,12 +98,16 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             onValueChange = { letter ->
                                 text = letter
                             },
+                            placeholder = {
+                                Text(text = "Type your first name")
+                            },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
                                     contentDescription = "Person Icon")
-                            }
+                            },
+                            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words)
                         )
                     }
                     Row(
