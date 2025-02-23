@@ -17,6 +17,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,6 +34,11 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
+    
+    var text by remember {
+        mutableStateOf("")
+    }
+
     Box(
         modifier = Modifier
             .background(color = Color(0xFF5783AF))
@@ -83,8 +92,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             fontFamily = Montserrat
                         )
                         TextField(
-                            value = "",
-                            onValueChange = {},
+                            value = text,
+                            onValueChange = { letter ->
+                                text = letter
+                            },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {
                                 Icon(
