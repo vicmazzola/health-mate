@@ -2,9 +2,14 @@ package br.com.fiap.welcomepage.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import br.com.fiap.welcomepage.R
+
+val Montserrat = FontFamily(Font(R.font.montserrat_regular))
+val Montserrat2 = FontFamily(Font(R.font.montserrat_variable))
 
 // Set of Material typography styles to start with
 val Typography = Typography(

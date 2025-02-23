@@ -20,11 +20,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.welcomepage.R
+import br.com.fiap.welcomepage.ui.theme.Montserrat
+import br.com.fiap.welcomepage.ui.theme.Montserrat2
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -50,7 +53,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 text = "Welcome",
                 fontSize = 32.sp,
                 color = Color.White,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontFamily = Montserrat
             )
             Card(
                 modifier = Modifier
@@ -75,7 +79,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         Text(
                             text = "What\'s your name",
                             fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = Montserrat
                         )
                         TextField(
                             value = "",
