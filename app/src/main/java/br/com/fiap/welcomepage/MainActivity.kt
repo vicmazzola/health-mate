@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import br.com.fiap.welcomepage.screens.DashboardScreen
 import br.com.fiap.welcomepage.screens.HomeScreen
 import br.com.fiap.welcomepage.ui.theme.WelcomePageTheme
 
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             WelcomePageTheme {
                 HomeScreen()
+                DashboardScreen()
             }
         }
     }
