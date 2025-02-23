@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -20,14 +21,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
-import br.com.fiap.welcomepage.ui.theme.Montserrat2
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -55,6 +54,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
                 fontFamily = Montserrat
+
             )
             Card(
                 modifier = Modifier
@@ -85,7 +85,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         TextField(
                             value = "",
                             onValueChange = {},
-                            modifier = Modifier.fillMaxWidth()
+                            modifier = Modifier.fillMaxWidth(),
+                            trailingIcon = {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.person_24),
+                                    contentDescription = "Person Icon")
+                            }
                         )
                     }
                     Row(
