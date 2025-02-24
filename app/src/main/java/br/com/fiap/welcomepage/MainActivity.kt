@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.fiap.welcomepage.screens.DashboardScreen
 import br.com.fiap.welcomepage.screens.HomeScreen
+import br.com.fiap.welcomepage.screens.SkillsScreen
 import br.com.fiap.welcomepage.ui.theme.WelcomePageTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,6 +23,7 @@ class MainActivity : ComponentActivity() {
             WelcomePageTheme {
                 HomeScreen()
                 DashboardScreen()
+                SkillsScreen()
             }
         }
     }
