@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -115,10 +116,12 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceAround
                     ) {
-                        Button(onClick = {}) {
+                        Button(
+                            onClick = {},
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
+                        ) {
                             Text("Next")
                         }
-
                     }
                 }
             }

@@ -1,5 +1,6 @@
 package br.com.fiap.welcomepage.screens
 
+import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +16,9 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.CheckboxDefaults.colors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -147,10 +150,12 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceAround
                     ) {
-                        Button(onClick = {}) {
+                        Button(
+                            onClick = {},
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
+                        ) {
                             Text("Next")
                         }
-
                     }
                 }
             }
