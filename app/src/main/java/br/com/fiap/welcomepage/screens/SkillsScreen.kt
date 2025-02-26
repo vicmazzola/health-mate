@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -17,6 +18,7 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -40,12 +42,24 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 @Composable
 fun SkillsScreen(modifier: Modifier = Modifier) {
 
-    var text by remember {
-        mutableStateOf("")
+    var running by remember {
+        mutableStateOf(false)
     }
 
-    var age by remember {
-        mutableStateOf("")
+    var cycling by remember {
+        mutableStateOf(false)
+    }
+
+    var swimming by remember {
+        mutableStateOf(false)
+    }
+
+    var weightlifting by remember {
+        mutableStateOf(false)
+    }
+
+    var hiit by remember {
+        mutableStateOf(false)
     }
 
     Box(
@@ -97,38 +111,136 @@ fun SkillsScreen(modifier: Modifier = Modifier) {
                         // CHECKBOX SKILLS
                         Text(
                             text = "Select your skills",
-                            fontSize = 26.sp,
+                            fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
-                        val exerciseSkills = listOf(
-                            "Running",
-                            "Cycling",
-                            "Swimming",
-                            "Weightlifting",
-                            "Pilates",
-                            "HIIT Workouts"
-                        )
-
-                        exerciseSkills.forEach { skill ->
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Checkbox(checked = false, onCheckedChange = {})
-                                Text(text = skill)
-                            }
+                        Spacer(modifier = Modifier.height(32.dp))
+                        // RUNNING
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Checkbox(
+                                checked = running,
+                                onCheckedChange = { isSelected ->
+                                    running = isSelected
+                                },
+                                colors = CheckboxDefaults.colors(
+                                    checkedColor = Color(0xFF03A9F4),
+                                    uncheckedColor = Color(0xFF4B4B4B),
+                                    checkmarkColor = Color.White
+                                )
+                            )
+                            Text(
+                                text = "Running",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = Montserrat,
+                            )
+                        }
+                        // CYCLING
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Checkbox(
+                                checked = cycling,
+                                onCheckedChange = { isSelected ->
+                                    cycling = isSelected
+                                },
+                                colors = CheckboxDefaults.colors(
+                                    checkedColor = Color(0xFF03A9F4),
+                                    uncheckedColor = Color(0xFF4B4B4B),
+                                    checkmarkColor = Color.White
+                                )
+                            )
+                            Text(
+                                text = "Cycling",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = Montserrat,
+                            )
+                        }
+                        // SWIMMING
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Checkbox(
+                                checked = swimming,
+                                onCheckedChange = { isSelected ->
+                                    swimming = isSelected
+                                },
+                                colors = CheckboxDefaults.colors(
+                                    checkedColor = Color(0xFF03A9F4),
+                                    uncheckedColor = Color(0xFF4B4B4B),
+                                    checkmarkColor = Color.White
+                                )
+                            )
+                            Text(
+                                text = "Swimming",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = Montserrat,
+                            )
+                        }
+                        // WEIGHTLIFTING
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Checkbox(
+                                checked = weightlifting,
+                                onCheckedChange = { isSelected ->
+                                    weightlifting = isSelected
+                                },
+                                colors = CheckboxDefaults.colors(
+                                    checkedColor = Color(0xFF03A9F4),
+                                    uncheckedColor = Color(0xFF4B4B4B),
+                                    checkmarkColor = Color.White
+                                )
+                            )
+                            Text(
+                                text = "Weightlifting",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = Montserrat,
+                            )
+                        }
+                        // HIIT
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Checkbox(
+                                checked = hiit,
+                                onCheckedChange = { isSelected ->
+                                    hiit = isSelected
+                                },
+                                colors = CheckboxDefaults.colors(
+                                    checkedColor = Color(0xFF03A9F4),
+                                    uncheckedColor = Color(0xFF4B4B4B),
+                                    checkmarkColor = Color.White
+                                )
+                            )
+                            Text(
+                                text = "HIIT Workout",
+                                fontSize = 20.sp,
+                                fontWeight = FontWeight.Bold,
+                                fontFamily = Montserrat,
+                            )
                         }
                     }
 
-
-                }
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceAround
-                ) {
-                    Button(onClick = {}) {
-                        Text("Next")
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceAround
+                    ) {
+                        Button(onClick = {}) {
+                            Text("Next")
+                        }
                     }
-
                 }
             }
         }
