@@ -6,12 +6,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -30,6 +33,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,6 +44,10 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 fun HomeScreen(modifier: Modifier = Modifier) {
     
     var text by remember {
+        mutableStateOf("")
+    }
+
+    var age by remember {
         mutableStateOf("")
     }
 
@@ -63,7 +71,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             )
             Text(
                 text = "Welcome",
-                fontSize = 32.sp,
+                fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
                 fontFamily = Montserrat
@@ -72,7 +80,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(400.dp),
+                    .height(450.dp),
                 shape = RoundedCornerShape(
                     topStart = 64.dp,
                     topEnd = 64.dp
@@ -89,9 +97,11 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         modifier = Modifier
                             .fillMaxWidth()
                     ) {
+
+                        // NAME TEXT FIELD
                         Text(
                             text = "What\'s your name",
-                            fontSize = 24.sp,
+                            fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
@@ -110,6 +120,56 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                                     contentDescription = "Person Icon")
                             },
                             keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words)
+                        )
+                        Spacer(modifier = Modifier.height(32.dp))
+                        // EMAIL TEXT FIELD
+                        Text(
+                            text = "Email",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = Montserrat
+                        )
+                        TextField(
+                            value = text,
+                            onValueChange = { letter ->
+                                text = letter
+                            },
+                            placeholder = {
+                                Text(text = "name@example.com")
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            trailingIcon = {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.person_24),
+                                    contentDescription = "Person Icon")
+                            },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+                        )
+
+                        // DATE OF BIRTH TEXT FIELD
+                        Text(
+                            text = "Date of Birth",
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            fontFamily = Montserrat,
+                            modifier = Modifier
+                                .padding(top = 32.dp),
+                        )
+                        TextField(
+                            value = age,
+                            onValueChange = { letter ->
+                                age = letter
+                            },
+                            placeholder = {
+                                Text(text = "30/02/2000")
+                            },
+                            modifier = Modifier.fillMaxWidth(),
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.DateRange,
+                                    contentDescription = "Calendar")
+                            },
+                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
                     }
                     Row(

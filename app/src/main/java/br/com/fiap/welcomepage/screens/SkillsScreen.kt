@@ -84,7 +84,7 @@ fun SkillsScreen(modifier: Modifier = Modifier) {
             )
             Text(
                 text = "Skills",
-                fontSize = 32.sp,
+                fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
                 fontFamily = Montserrat
