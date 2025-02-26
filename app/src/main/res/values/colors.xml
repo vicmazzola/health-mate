@@ -8,5 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fiap_red">#FFED145B</color>
-    <color name="bg_blue">#FF5783AF</color>
+    <color name="primary_color">#FF5783AF</color>
 </resources>

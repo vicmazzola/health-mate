@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -44,7 +45,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
     Box(
         modifier = Modifier
-            .background(color = Color(0xFF5783AF))
+            .background(colorResource(id = R.color.primary_color))
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
