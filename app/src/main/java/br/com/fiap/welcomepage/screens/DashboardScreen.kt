@@ -1,6 +1,5 @@
 package br.com.fiap.welcomepage.screens
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,15 +18,25 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.welcomepage.R
+import br.com.fiap.welcomepage.bmiCalculate
 import br.com.fiap.welcomepage.ui.theme.Montserrat
+import java.util.Locale
 
-@SuppressLint("DefaultLocale")
 @Composable
 fun DashboardScreen(modifier: Modifier = Modifier) {
-    var weight by remember { mutableStateOf("") }
-    var height by remember { mutableStateOf("") }
-    var bmiResult by remember { mutableStateOf<String?>(null) }
-    var errorMessage by remember { mutableStateOf<String?>(null) }
+
+    var weight by remember {
+        mutableStateOf("")
+    }
+
+    var height by remember {
+        mutableStateOf("")
+    }
+
+    var bmi by remember {
+        mutableDoubleStateOf(0.0)
+    }
+
 
     Box(
         modifier = Modifier
@@ -62,7 +71,7 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(28.dp),
-                    verticalArrangement = Arrangement.spacedBy(16.dp), // Better spacing
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Column(modifier = Modifier.fillMaxWidth()) {
@@ -96,44 +105,28 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
                     }
-
-                    // Display BMI result or error
-                    errorMessage?.let {
-                        Text(
-                            text = it,
-                            color = Color.Red,
-                            fontSize = 16.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    }
-
-                    bmiResult?.let {
-                        Text(
-                            text = "Your BMI: $it",
-                            fontSize = 22.sp,
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Black
-                        )
-                    }
-
                     Button(
                         onClick = {
-                            val weightValue = weight.toFloatOrNull()
-                            val heightValue = height.toFloatOrNull()
-
-                            if (weightValue == null || heightValue == null || heightValue <= 0) {
-                                errorMessage = "Please enter valid numbers"
-                                bmiResult = null
-                            } else {
-                                val bmi = weightValue / (heightValue * heightValue)
-                                bmiResult = String.format("%.2f", bmi)
-                                errorMessage = null
-                            }
+                            bmi = bmiCalculate(
+                                weightUser = weight.toDouble(),
+                                heightUser = height.toDouble()
+                            )
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                     ) {
                         Text("Calculate")
                     }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    // RESULT HERE
+                    Text(
+                        text = String.format(Locale.getDefault(), "%.1f", bmi),
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = Montserrat
+                    )
+
                 }
             }
         }
