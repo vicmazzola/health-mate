@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.bmiCalculate
+import br.com.fiap.welcomepage.getBmiStatus
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 import java.util.Locale
 
@@ -37,6 +38,9 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
         mutableDoubleStateOf(0.0)
     }
 
+    var bmiStatus by remember {
+        mutableStateOf("")
+    }
 
     Box(
         modifier = Modifier
@@ -111,6 +115,7 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
                                 weightUser = weight.toDouble(),
                                 heightUser = height.toDouble()
                             )
+                            bmiStatus = getBmiStatus(bmi)
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                     ) {
@@ -119,14 +124,25 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // RESULT HERE
+                    // Show BMI result
                     Text(
-                        text = String.format(Locale.getDefault(), "%.1f", bmi),
+                        text = String.format(Locale.getDefault(), "Your BMI: %.1f", bmi),
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = Montserrat
                     )
 
+                    // Spacer for separation
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    // Show BMI status (Underweight, Ideal Weight, etc.)
+                    Text(
+                        text = bmiStatus,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = Montserrat,
+                        color = Color.Gray
+                    )
                 }
             }
         }
