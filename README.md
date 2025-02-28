@@ -1,22 +1,22 @@
-# Welcome Page 📱  
+# Health-Mate 📱  
 
-This project is part of my **Kotlin & Android Studio** studies, where I'm **practicing Jetpack Compose** to build modern UI components.  
+**Health-Mate** is a study project for **Kotlin & Android Studio**, focusing on **Jetpack Compose** to build modern UI components.  
 
 ## ✨ Features  
-- 📌 Simple **HomeScreen** layout using `Box`, `Text`, and `Button`.  
-- 🎨 Styled with **Jetpack Compose** and uses `sp` for scalable text.  
-- 🎯 Experimenting with **modifiers** like `.fillMaxSize()`, `.background()`, and `align()`.  
+- 🏠 **Home Screen** – Set your name and email.  
+- 📋 **Skills Screen** – Select activities like running, cycling, and swimming.  
+- ⚖ **BMI Calculator** – Enter weight & height to calculate BMI.  
 
 ## 🚀 Tech Stack  
 - **Kotlin** 🟡  
 - **Jetpack Compose** 📦  
 - **Android Studio** 🏗  
 
-## 📌 Learning Goals  
-✔ Understanding **Composable functions**  
-✔ Working with **Modifiers & Layouts**  
-✔ Practicing **Jetpack Compose UI elements**  
+## 🎯 Learning Goals  
+✔ Practicing **Composable functions**  
+✔ Using **Modifiers & Layouts**  
+✔ Exploring **Jetpack Compose UI**  
 
----
+---  
 
-🔹 **Just a simple study project—open to improvements!** 🚀  
+🔹 **A simple study project, open to improvements!** 🚀  
