@@ -236,7 +236,7 @@ fun SkillsScreen(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                navController.navigate("dashboard")
+                                navController.navigate("dashboard/Victor")
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {

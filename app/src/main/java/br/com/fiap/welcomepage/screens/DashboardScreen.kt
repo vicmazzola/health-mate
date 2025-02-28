@@ -25,7 +25,10 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 import java.util.Locale
 
 @Composable
-fun DashboardScreen(navController: NavController) {
+fun DashboardScreen(
+    navController: NavController,
+    name: String
+) {
 
     var weight by remember {
         mutableStateOf("")
@@ -60,7 +63,7 @@ fun DashboardScreen(navController: NavController) {
                 modifier = Modifier.padding(top = 60.dp)
             )
             Text(
-                text = "BMI Calculator",
+                text = "BMI Calculator for you mate $name",
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,

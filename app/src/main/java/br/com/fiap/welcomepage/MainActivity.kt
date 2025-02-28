@@ -26,11 +26,12 @@ class MainActivity : ComponentActivity() {
                 composable(route = "home") {
                     HomeScreen(navController)
                 }
-                composable(route = "dashboard") {
-                    DashboardScreen(navController)
-                }
                 composable(route = "skills") {
                     SkillsScreen(navController)
+                }
+                composable(route = "dashboard/{name}") {
+                    val name = it.arguments?.getString("name")
+                    DashboardScreen(navController, name!!)
                 }
             }
         }

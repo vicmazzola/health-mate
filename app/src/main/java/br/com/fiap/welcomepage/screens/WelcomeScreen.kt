@@ -80,7 +80,7 @@ fun WelcomeScreen(navController: NavController) {
                             .fillMaxWidth()
                     ) {
 
-                        // NAME TEXT FIELD
+                        // Welcome
                         Text(
                             text = "Cheers Mate!",
                             fontSize = 20.sp,
