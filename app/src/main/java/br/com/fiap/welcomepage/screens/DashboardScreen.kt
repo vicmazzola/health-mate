@@ -17,6 +17,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.bmiCalculate
 import br.com.fiap.welcomepage.getBmiStatus
@@ -24,7 +25,7 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 import java.util.Locale
 
 @Composable
-fun DashboardScreen(modifier: Modifier = Modifier) {
+fun DashboardScreen(navController: NavController) {
 
     var weight by remember {
         mutableStateOf("")
@@ -149,8 +150,8 @@ fun DashboardScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(showSystemUi = true)
-@Composable
-private fun DashboardScreenPreview() {
-    DashboardScreen()
-}
+//@Preview(showSystemUi = true)
+//@Composable
+//private fun DashboardScreenPreview() {
+//    DashboardScreen()
+//}

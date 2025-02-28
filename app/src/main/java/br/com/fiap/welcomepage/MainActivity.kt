@@ -3,6 +3,9 @@ package br.com.fiap.welcomepage
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import br.com.fiap.welcomepage.screens.DashboardScreen
 import br.com.fiap.welcomepage.screens.HomeScreen
 import br.com.fiap.welcomepage.screens.SkillsScreen
@@ -14,10 +17,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WelcomePageTheme {
-                WelcomeScreen()
-                HomeScreen()
-                DashboardScreen()
-                SkillsScreen()
+            }
+            val navController = rememberNavController()
+            NavHost(navController = navController, startDestination = "welcome") {
+                composable(route = "welcome") {
+                    WelcomeScreen(navController)
+                }
+                composable(route = "home") {
+                    HomeScreen(navController)
+                }
+                composable(route = "dashboard") {
+                    DashboardScreen(navController)
+                }
+                composable(route = "skills") {
+                    SkillsScreen(navController)
+                }
             }
         }
     }

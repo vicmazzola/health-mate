@@ -32,11 +32,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun SkillsScreen(modifier: Modifier = Modifier) {
+fun SkillsScreen(navController: NavController) {
 
     var running by remember {
         mutableStateOf(false)
@@ -234,7 +235,9 @@ fun SkillsScreen(modifier: Modifier = Modifier) {
                         horizontalArrangement = Arrangement.SpaceAround
                     ) {
                         Button(
-                            onClick = {},
+                            onClick = {
+                                navController.navigate("dashboard")
+                            },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
                             Text("Next")
@@ -246,9 +249,9 @@ fun SkillsScreen(modifier: Modifier = Modifier) {
     }
 }
 
-
-@Preview(showSystemUi = true)
-@Composable
-private fun SkillsScreenPreview() {
-    SkillsScreen()
-}
+//
+//@Preview(showSystemUi = true)
+//@Composable
+//private fun SkillsScreenPreview() {
+//    SkillsScreen()
+//}

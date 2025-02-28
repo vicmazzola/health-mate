@@ -37,13 +37,18 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(navController: NavController) {
     
-    var text by remember {
+    var name by remember {
+        mutableStateOf("")
+    }
+
+    var email by remember {
         mutableStateOf("")
     }
 
@@ -106,9 +111,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             fontFamily = Montserrat
                         )
                         TextField(
-                            value = text,
+                            value = name,
                             onValueChange = { letter ->
-                                text = letter
+                                name = letter
                             },
                             placeholder = {
                                 Text(text = "Type your first name")
@@ -130,9 +135,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             fontFamily = Montserrat
                         )
                         TextField(
-                            value = text,
+                            value = email,
                             onValueChange = { letter ->
-                                text = letter
+                                email = letter
                             },
                             placeholder = {
                                 Text(text = "name@example.com")
@@ -178,7 +183,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         horizontalArrangement = Arrangement.SpaceAround
                     ) {
                         Button(
-                            onClick = {},
+                            onClick = {
+                                navController.navigate("skills")
+                            },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
                             Text("Next")
@@ -190,9 +197,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     }
 }
 
-
-@Preview(showSystemUi = true)
-@Composable
-private fun HomeScreenPreview() {
-    HomeScreen()
-}
+//
+//@Preview(showSystemUi = true)
+//@Composable
+//private fun HomeScreenPreview() {
+//    HomeScreen()
+//}
