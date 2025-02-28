@@ -13,8 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -33,7 +31,6 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -41,7 +38,7 @@ import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun WelcomeScreen(modifier: Modifier = Modifier) {
     
     var text by remember {
         mutableStateOf("")
@@ -70,7 +67,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Could you please fill your info mate?",
+                text = "Welcome mate!",
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -100,78 +97,13 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 
                         // NAME TEXT FIELD
                         Text(
-                            text = "What\'s your name",
+                            text = "Cheers Mate!",
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
-                        )
-                        TextField(
-                            value = text,
-                            onValueChange = { letter ->
-                                text = letter
-                            },
-                            placeholder = {
-                                Text(text = "Type your first name")
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            trailingIcon = {
-                                Icon(
-                                    painter = painterResource(id = R.drawable.person_24),
-                                    contentDescription = "Person Icon")
-                            },
-                            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words)
-                        )
-                        Spacer(modifier = Modifier.height(32.dp))
-                        // EMAIL TEXT FIELD
-                        Text(
-                            text = "Email",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-                            fontFamily = Montserrat
-                        )
-                        TextField(
-                            value = text,
-                            onValueChange = { letter ->
-                                text = letter
-                            },
-                            placeholder = {
-                                Text(text = "name@example.com")
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            trailingIcon = {
-                                Icon(
-                                    painter = painterResource(id = R.drawable.person_24),
-                                    contentDescription = "Person Icon")
-                            },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-                        )
-
-                        // DATE OF BIRTH TEXT FIELD
-                        Text(
-                            text = "Date of Birth",
-                            fontSize = 20.sp,
-                            fontWeight = FontWeight.Bold,
-                            fontFamily = Montserrat,
-                            modifier = Modifier
-                                .padding(top = 32.dp),
-                        )
-                        TextField(
-                            value = age,
-                            onValueChange = { letter ->
-                                age = letter
-                            },
-                            placeholder = {
-                                Text(text = "30/02/2000")
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            trailingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.DateRange,
-                                    contentDescription = "Calendar")
-                            },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
                     }
+                        Spacer(modifier = Modifier.height(32.dp))
                     Row(
                         modifier = Modifier
                             .fillMaxWidth(),
@@ -190,9 +122,8 @@ fun HomeScreen(modifier: Modifier = Modifier) {
     }
 }
 
-
 @Preview(showSystemUi = true)
 @Composable
-private fun HomeScreenPreview() {
-    HomeScreen()
+ private fun WelcomeScreenPreview() {
+    WelcomeScreen()
 }

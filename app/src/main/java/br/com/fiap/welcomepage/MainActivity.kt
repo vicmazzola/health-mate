@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import br.com.fiap.welcomepage.screens.DashboardScreen
 import br.com.fiap.welcomepage.screens.HomeScreen
 import br.com.fiap.welcomepage.screens.SkillsScreen
+import br.com.fiap.welcomepage.screens.WelcomeScreen
 import br.com.fiap.welcomepage.ui.theme.WelcomePageTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,8 +14,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WelcomePageTheme {
-                DashboardScreen()
+                WelcomeScreen()
                 HomeScreen()
+                DashboardScreen()
                 SkillsScreen()
             }
         }
