@@ -11,6 +11,9 @@ import br.com.fiap.welcomepage.screens.HomeScreen
 import br.com.fiap.welcomepage.screens.SkillsScreen
 import br.com.fiap.welcomepage.screens.WelcomeScreen
 import br.com.fiap.welcomepage.ui.theme.WelcomePageTheme
+import com.google.accompanist.navigation.animation.AnimatedNavHost
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.google.accompanist.navigation.animation.composable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +21,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             WelcomePageTheme {
             }
-            val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = "welcome") {
+            val navController = rememberAnimatedNavController()
+            AnimatedNavHost(
+                navController = navController,
+                startDestination = "welcome") {
                 composable(route = "welcome") {
                     WelcomeScreen(navController)
                 }
