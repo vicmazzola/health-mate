@@ -31,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -43,7 +44,7 @@ import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
 fun HomeScreen(navController: NavController) {
-    
+
     var name by remember {
         mutableStateOf("")
     }
@@ -63,7 +64,7 @@ fun HomeScreen(navController: NavController) {
         contentAlignment = Alignment.Center
     ) {
         Column(
-            modifier =  Modifier
+            modifier = Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -75,7 +76,7 @@ fun HomeScreen(navController: NavController) {
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Fill your info mate!",
+                text = stringResource(R.string.home_fill_info),
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -105,7 +106,7 @@ fun HomeScreen(navController: NavController) {
 
                         // NAME TEXT FIELD
                         Text(
-                            text = "What\'s your name",
+                            text = stringResource(R.string.home_name_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
@@ -116,20 +117,21 @@ fun HomeScreen(navController: NavController) {
                                 name = letter
                             },
                             placeholder = {
-                                Text(text = "Type your first name")
+                                Text(text = stringResource(R.string.home_name_placeholder))
                             },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
-                                    contentDescription = "Person Icon")
+                                    contentDescription = stringResource(R.string.icon_person)
+                                )
                             },
                             keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words)
                         )
                         Spacer(modifier = Modifier.height(32.dp))
                         // EMAIL TEXT FIELD
                         Text(
-                            text = "Email",
+                            text = stringResource(R.string.home_email_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
@@ -140,20 +142,21 @@ fun HomeScreen(navController: NavController) {
                                 email = letter
                             },
                             placeholder = {
-                                Text(text = "name@example.com")
+                                Text(text = stringResource(R.string.home_email_placeholder))
                             },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
-                                    contentDescription = "Person Icon")
+                                    contentDescription = stringResource(R.string.icon_person)
+                                )
                             },
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
                         )
 
                         // DATE OF BIRTH TEXT FIELD
                         Text(
-                            text = "Date of Birth",
+                            text = stringResource(R.string.home_dob_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat,
@@ -166,13 +169,14 @@ fun HomeScreen(navController: NavController) {
                                 age = letter
                             },
                             placeholder = {
-                                Text(text = "30/02/2000")
+                                Text(text = stringResource(R.string.home_dob_placeholder))
                             },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.DateRange,
-                                    contentDescription = "Calendar")
+                                    contentDescription = stringResource(R.string.icon_calendar)
+                                )
                             },
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
@@ -188,7 +192,7 @@ fun HomeScreen(navController: NavController) {
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
-                            Text("Next")
+                            Text(stringResource(R.string.home_next_button))
                         }
                     }
                 }

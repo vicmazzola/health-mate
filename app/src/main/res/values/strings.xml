@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">WelcomePage</string>
+
+    <!-- WELCOME SCREEN -->
+    <string name="title_welcome">Cheers Mate!</string>
+    <string name="subtitle_welcome">Cheers Mate!</string>
+
+    <!-- HOME SCREEN -->
+    <string name="home_fill_info">Fill your info mate!</string>
+    <string name="home_name_label">What\'s your name</string>
+    <string name="home_name_placeholder">Type your first name</string>
+    <string name="home_email_label">Email</string>
+    <string name="home_email_placeholder">name@example.com</string>
+    <string name="home_dob_label">Date of Birth</string>
+    <string name="home_dob_placeholder">30/02/2000</string>
+    <string name="home_next_button">Next</string>
+
+
+    <!-- ICON'S HOME DESCRIPTIONS -->
+    <string name="icon_person">Person Icon</string>
+    <string name="icon_calendar">Calendar</string>
+
+    <!-- SKILLS SCREEN -->
+
+    <!-- DASHBOARD SCREEN -->
+
 </resources>

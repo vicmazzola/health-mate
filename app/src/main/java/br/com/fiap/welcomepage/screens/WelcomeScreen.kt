@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -52,7 +53,7 @@ fun WelcomeScreen(navController: NavController) {
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Welcome!",
+                text =  stringResource(R.string.title_welcome),
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -82,7 +83,7 @@ fun WelcomeScreen(navController: NavController) {
 
                         // Welcome
                         Text(
-                            text = "Cheers Mate!",
+                            text = stringResource(R.string.subtitle_welcome),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
