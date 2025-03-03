@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,7 +64,7 @@ fun DashboardScreen(
                 modifier = Modifier.padding(top = 60.dp)
             )
             Text(
-                text = "BMI Calculator",
+                text = stringResource(R.string.dashboard_title),
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -84,7 +85,7 @@ fun DashboardScreen(
                 ) {
                     Column(modifier = Modifier.fillMaxWidth()) {
                         Text(
-                            text = "Weight (kg)",
+                            text = stringResource(R.string.dashboard_weight_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
@@ -92,7 +93,7 @@ fun DashboardScreen(
                         TextField(
                             value = weight,
                             onValueChange = { weight = it },
-                            placeholder = { Text(text = "Enter weight in kg") },
+                            placeholder = { Text(text = stringResource(R.string.dashboard_weight_placeholder)) },
                             modifier = Modifier.fillMaxWidth(),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
@@ -100,7 +101,7 @@ fun DashboardScreen(
                         Spacer(modifier = Modifier.height(16.dp))
 
                         Text(
-                            text = "Height (m)",
+                            text = stringResource(R.string.dashboard_height_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
@@ -108,7 +109,7 @@ fun DashboardScreen(
                         TextField(
                             value = height,
                             onValueChange = { height = it },
-                            placeholder = { Text(text = "Enter height in meters") },
+                            placeholder = { Text(text = stringResource(R.string.dashboard_height_placeholder)) },
                             modifier = Modifier.fillMaxWidth(),
                             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                         )
@@ -123,14 +124,14 @@ fun DashboardScreen(
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                     ) {
-                        Text("Calculate")
+                        Text(stringResource(R.string.dashboard_calculate_button))
                     }
 
                     Spacer(modifier = Modifier.height(16.dp))
 
                     // Show BMI result
                     Text(
-                        text = String.format(Locale.getDefault(), "Your BMI: %.1f", bmi),
+                        text = String.format(Locale.getDefault(), stringResource(R.string.dashboard_bmi_result), bmi),
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         fontFamily = Montserrat

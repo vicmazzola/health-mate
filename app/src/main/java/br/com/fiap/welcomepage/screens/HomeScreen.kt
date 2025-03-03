@@ -156,7 +156,7 @@ fun HomeScreen(navController: NavController) {
 
                         // DATE OF BIRTH TEXT FIELD
                         Text(
-                            text = stringResource(R.string.home_dob_label),
+                            text = stringResource(R.string.home_birth_label),
                             fontSize = 20.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat,
@@ -169,7 +169,7 @@ fun HomeScreen(navController: NavController) {
                                 age = letter
                             },
                             placeholder = {
-                                Text(text = stringResource(R.string.home_dob_placeholder))
+                                Text(text = stringResource(R.string.home_birth_placeholder))
                             },
                             modifier = Modifier.fillMaxWidth(),
                             trailingIcon = {

@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -73,12 +74,12 @@ fun SkillsScreen(navController: NavController) {
         ) {
             Image(
                 painter = painterResource(R.drawable.runner),
-                contentDescription = "Runner Image",
+                contentDescription = stringResource(R.string.icon_runner),
                 modifier = Modifier
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Skills",
+                text = stringResource(R.string.skills_title),
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
@@ -107,7 +108,7 @@ fun SkillsScreen(navController: NavController) {
                     ) {
                         // CHECKBOX SKILLS
                         Text(
-                            text = "Select at least one mate!",
+                            text = stringResource(R.string.skills_select_prompt),
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
@@ -130,7 +131,7 @@ fun SkillsScreen(navController: NavController) {
                                 )
                             )
                             Text(
-                                text = "Running",
+                                text = stringResource(R.string.skills_running),
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = Montserrat,
@@ -153,7 +154,7 @@ fun SkillsScreen(navController: NavController) {
                                 )
                             )
                             Text(
-                                text = "Cycling",
+                                text = stringResource(R.string.skills_cycling),
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = Montserrat,
@@ -176,7 +177,7 @@ fun SkillsScreen(navController: NavController) {
                                 )
                             )
                             Text(
-                                text = "Swimming",
+                                text = stringResource(R.string.skills_swimming),
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = Montserrat,
@@ -199,7 +200,7 @@ fun SkillsScreen(navController: NavController) {
                                 )
                             )
                             Text(
-                                text = "Weightlifting",
+                                text = stringResource(R.string.skills_weightlifting),
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = Montserrat,
@@ -222,7 +223,7 @@ fun SkillsScreen(navController: NavController) {
                                 )
                             )
                             Text(
-                                text = "HIIT Workout",
+                                text = stringResource(R.string.skills_hiit),
                                 fontSize = 20.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = Montserrat,
@@ -240,7 +241,7 @@ fun SkillsScreen(navController: NavController) {
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
-                            Text("Next")
+                            Text(stringResource(R.string.skills_next_button))
                         }
                     }
                 }
