@@ -63,7 +63,7 @@ fun DashboardScreen(
                 modifier = Modifier.padding(top = 60.dp)
             )
             Text(
-                text = "BMI Calculator for you mate $name",
+                text = "BMI Calculator",
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,

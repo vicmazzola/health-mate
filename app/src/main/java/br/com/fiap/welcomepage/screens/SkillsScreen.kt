@@ -107,7 +107,7 @@ fun SkillsScreen(navController: NavController) {
                     ) {
                         // CHECKBOX SKILLS
                         Text(
-                            text = "Select your skills",
+                            text = "Select at least one mate!",
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat

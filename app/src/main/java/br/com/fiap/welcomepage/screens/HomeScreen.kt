@@ -75,7 +75,7 @@ fun HomeScreen(navController: NavController) {
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Could you please fill your info mate?",
+                text = "Fill your info mate!",
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,

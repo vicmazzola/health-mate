@@ -52,7 +52,7 @@ fun WelcomeScreen(navController: NavController) {
                     .padding(top = 60.dp)
             )
             Text(
-                text = "Welcome mate!",
+                text = "Welcome!",
                 fontSize = 30.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
