@@ -59,7 +59,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
 
-    implementation("com.google.accompanist:accompanist-navigation-animation:0.30.1")
+    implementation(libs.accompanist.navigation.animation)
 
 
 }
