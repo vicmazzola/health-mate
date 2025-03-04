@@ -38,7 +38,7 @@ import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun SkillsScreen(navController: NavController) {
+fun SkillsScreen(navController: NavController?) {
 
     var running by remember {
         mutableStateOf(false)
@@ -237,7 +237,7 @@ fun SkillsScreen(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                navController.navigate("dashboard/Victor")
+                                navController?.navigate("dashboard/Victor")
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
@@ -250,9 +250,9 @@ fun SkillsScreen(navController: NavController) {
     }
 }
 
-//
-//@Preview(showSystemUi = true)
-//@Composable
-//private fun SkillsScreenPreview() {
-//    SkillsScreen()
-//}
+
+@Preview(showSystemUi = true)
+@Composable
+private fun SkillsScreenPreview() {
+    SkillsScreen(null)
+}

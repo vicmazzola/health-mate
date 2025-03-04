@@ -32,7 +32,7 @@ import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun WelcomeScreen(navController: NavController) {
+fun WelcomeScreen(navController: NavController?) {
 
     Box(
         modifier = Modifier
@@ -97,7 +97,7 @@ fun WelcomeScreen(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                navController.navigate("home")
+                                navController?.navigate("home")
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
@@ -110,8 +110,8 @@ fun WelcomeScreen(navController: NavController) {
     }
 }
 
-//@Preview(showSystemUi = true)
-//@Composable
-//private fun WelcomeScreenPreview() {
-//    WelcomeScreen()
-//}
+@Preview(showSystemUi = true)
+@Composable
+private fun WelcomeScreenPreview() {
+    WelcomeScreen(null)
+}

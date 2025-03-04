@@ -43,7 +43,7 @@ import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController?) {
 
     var name by remember {
         mutableStateOf("")
@@ -188,7 +188,7 @@ fun HomeScreen(navController: NavController) {
                     ) {
                         Button(
                             onClick = {
-                                navController.navigate("skills")
+                                navController?.navigate("skills")
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                         ) {
@@ -201,9 +201,9 @@ fun HomeScreen(navController: NavController) {
     }
 }
 
-//
-//@Preview(showSystemUi = true)
-//@Composable
-//private fun HomeScreenPreview() {
-//    HomeScreen()
-//}
+
+@Preview(showSystemUi = true)
+@Composable
+private fun HomeScreenPreview() {
+    HomeScreen(null)
+}

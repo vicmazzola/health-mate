@@ -27,8 +27,8 @@ import java.util.Locale
 
 @Composable
 fun DashboardScreen(
-    navController: NavController,
-    name: String
+    navController: NavController?,
+    name: String?
 ) {
 
     var weight by remember {
@@ -154,8 +154,8 @@ fun DashboardScreen(
     }
 }
 
-//@Preview(showSystemUi = true)
-//@Composable
-//private fun DashboardScreenPreview() {
-//    DashboardScreen()
-//}
+@Preview(showSystemUi = true)
+@Composable
+private fun DashboardScreenPreview() {
+    DashboardScreen(null,null)
+}
