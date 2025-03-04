@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
+import br.com.fiap.welcomepage.components.TextInput
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
@@ -111,22 +112,17 @@ fun HomeScreen(navController: NavController?) {
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
-                        TextField(
+                        TextInput(
+                            placeholder = stringResource(R.string.home_name_placeholder),
                             value = name,
-                            onValueChange = { letter ->
-                                name = letter
-                            },
-                            placeholder = {
-                                Text(text = stringResource(R.string.home_name_placeholder))
-                            },
-                            modifier = Modifier.fillMaxWidth(),
+                            onValueChange = { name = it },
+                            keyboardType = KeyboardType.Text,
                             trailingIcon = {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
                                     contentDescription = stringResource(R.string.icon_person)
                                 )
-                            },
-                            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words)
+                            }
                         )
                         Spacer(modifier = Modifier.height(32.dp))
                         // EMAIL TEXT FIELD
@@ -136,22 +132,17 @@ fun HomeScreen(navController: NavController?) {
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
-                        TextField(
+                        TextInput(
+                            placeholder = stringResource(R.string.home_email_placeholder),
                             value = email,
-                            onValueChange = { letter ->
-                                email = letter
-                            },
-                            placeholder = {
-                                Text(text = stringResource(R.string.home_email_placeholder))
-                            },
-                            modifier = Modifier.fillMaxWidth(),
+                            onValueChange = { email = it },
+                            keyboardType = KeyboardType.Email,
                             trailingIcon = {
                                 Icon(
                                     painter = painterResource(id = R.drawable.person_24),
                                     contentDescription = stringResource(R.string.icon_person)
                                 )
-                            },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
+                            }
                         )
 
                         // DATE OF BIRTH TEXT FIELD
@@ -163,22 +154,17 @@ fun HomeScreen(navController: NavController?) {
                             modifier = Modifier
                                 .padding(top = 32.dp),
                         )
-                        TextField(
+                        TextInput(
+                            placeholder = stringResource(R.string.home_birth_placeholder),
                             value = age,
-                            onValueChange = { letter ->
-                                age = letter
-                            },
-                            placeholder = {
-                                Text(text = stringResource(R.string.home_birth_placeholder))
-                            },
-                            modifier = Modifier.fillMaxWidth(),
+                            onValueChange = { age = it },
+                            keyboardType = KeyboardType.Number,
                             trailingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.DateRange,
                                     contentDescription = stringResource(R.string.icon_calendar)
                                 )
-                            },
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                            }
                         )
                     }
                     Row(
