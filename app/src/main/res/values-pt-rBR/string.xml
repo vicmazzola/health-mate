@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WelcomePage</string>
+
+    <!-- WELCOME SCREEN -->
+    <string name="title_welcome">Bem-vindo!</string>
+    <string name="subtitle_welcome">Saudações, amigo!</string>
+
+    <!-- HOME SCREEN -->
+    <string name="home_fill_info">Preencha suas informações!</string>
+    <string name="home_name_label">Qual é o seu nome?</string>
+    <string name="home_name_placeholder">Digite seu primeiro nome</string>
+    <string name="home_email_label">E-mail</string>
+    <string name="home_email_placeholder">nome@exemplo.com</string>
+    <string name="home_birth_label">Data de nascimento</string>
+    <string name="home_birth_placeholder">10/06/1997</string>
+    <string name="home_next_button">Próximo</string>
+
+    <!-- ICON'S HOME DESCRIPTIONS -->
+    <string name="icon_person">Ícone de pessoa</string>
+    <string name="icon_calendar">Calendário</string>
+
+    <!-- SKILLS SCREEN -->
+    <string name="skills_title">Habilidades</string>
+    <string name="skills_select_prompt">Selecione pelo menos uma habilidade!</string>
+    <string name="skills_running">Corrida</string>
+    <string name="skills_cycling">Ciclismo</string>
+    <string name="skills_swimming">Natação</string>
+    <string name="skills_weightlifting">Levantamento de peso</string>
+    <string name="skills_hiit">Treino HIIT</string>
+    <string name="skills_next_button">Próximo</string>
+
+    <!-- ICON'S SKILLS DESCRIPTIONS -->
+    <string name="icon_runner">Imagem de corredor</string>
+
+    <!-- DASHBOARD SCREEN -->
+    <string name="dashboard_title">Calculadora de IMC</string>
+    <string name="dashboard_weight_label">Peso (kg)</string>
+    <string name="dashboard_weight_placeholder">Digite o peso em kg</string>
+    <string name="dashboard_height_label">Altura (m)</string>
+    <string name="dashboard_height_placeholder">Digite a altura em metros</string>
+    <string name="dashboard_calculate_button">Calcular</string>
+    <string name="dashboard_bmi_result">Seu IMC: %.1f</string>
+
+</resources>
