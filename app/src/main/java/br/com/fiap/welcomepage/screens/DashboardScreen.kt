@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.bmiCalculate
+import br.com.fiap.welcomepage.components.TextInput
 import br.com.fiap.welcomepage.getBmiStatus
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 import java.util.Locale
@@ -90,12 +91,12 @@ fun DashboardScreen(
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
-                        TextField(
+                        TextInput(
                             value = weight,
                             onValueChange = { weight = it },
-                            placeholder = { Text(text = stringResource(R.string.dashboard_weight_placeholder)) },
                             modifier = Modifier.fillMaxWidth(),
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                            placeholder = stringResource(R.string.dashboard_weight_placeholder),
+                            keyboardType = KeyboardType.Number,
                         )
 
                         Spacer(modifier = Modifier.height(16.dp))
@@ -106,13 +107,15 @@ fun DashboardScreen(
                             fontWeight = FontWeight.Bold,
                             fontFamily = Montserrat
                         )
-                        TextField(
+
+                        TextInput(
                             value = height,
                             onValueChange = { height = it },
-                            placeholder = { Text(text = stringResource(R.string.dashboard_height_placeholder)) },
                             modifier = Modifier.fillMaxWidth(),
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                            placeholder = stringResource(R.string.dashboard_height_placeholder),
+                            keyboardType = KeyboardType.Number,
                         )
+
                     }
                     Button(
                         onClick = {
