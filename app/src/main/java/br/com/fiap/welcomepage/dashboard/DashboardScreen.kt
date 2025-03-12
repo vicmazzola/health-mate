@@ -112,7 +112,7 @@ fun DashboardScreen(
                         Text(stringResource(R.string.dashboard_calculate_button))
                     }
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
 
                     // Show BMI result
                     Text(
@@ -123,7 +123,7 @@ fun DashboardScreen(
                     )
 
                     // Spacer for separation
-                    Spacer(modifier = Modifier.height(8.dp))
+                    Spacer(modifier = Modifier.height(2.dp))
 
                     // Show BMI status (Underweight, Ideal Weight, etc.)
                     Text(
