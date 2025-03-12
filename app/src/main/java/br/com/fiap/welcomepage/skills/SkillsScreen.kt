@@ -1,4 +1,4 @@
-package br.com.fiap.welcomepage.screens
+package br.com.fiap.welcomepage.skills
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

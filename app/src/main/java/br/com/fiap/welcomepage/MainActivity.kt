@@ -8,9 +8,9 @@ import androidx.compose.animation.core.tween
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.composable
-import br.com.fiap.welcomepage.screens.DashboardScreen
-import br.com.fiap.welcomepage.screens.HomeScreen
-import br.com.fiap.welcomepage.screens.SkillsScreen
+import br.com.fiap.welcomepage.dashboard.DashboardScreen
+import br.com.fiap.welcomepage.home.HomeScreen
+import br.com.fiap.welcomepage.skills.SkillsScreen
 import br.com.fiap.welcomepage.screens.WelcomeScreen
 import br.com.fiap.welcomepage.ui.theme.WelcomePageTheme
 

@@ -1,10 +1,9 @@
-package br.com.fiap.welcomepage.screens
+package br.com.fiap.welcomepage.dashboard
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -15,38 +14,27 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
-import br.com.fiap.welcomepage.bmiCalculate
 import br.com.fiap.welcomepage.components.TextInput
-import br.com.fiap.welcomepage.getBmiStatus
 import br.com.fiap.welcomepage.ui.theme.Montserrat
+import br.com.fiap.welcomepage.ui.dashboard.DashboardViewModel
 import java.util.Locale
 
 @Composable
 fun DashboardScreen(
     navController: NavController?,
-    name: String?
+    name: String?,
+    dashboardViewModel: DashboardViewModel = viewModel()
 ) {
-
-    var weight by remember {
-        mutableStateOf("")
-    }
-
-    var height by remember {
-        mutableStateOf("")
-    }
-
-    var bmi by remember {
-        mutableDoubleStateOf(0.0)
-    }
-
-    var bmiStatus by remember {
-        mutableStateOf("")
-    }
+    // Observe ViewModel states
+    val weight = dashboardViewModel.weight
+    val height = dashboardViewModel.height
+    val bmi = dashboardViewModel.bmi
+    val bmiStatus = dashboardViewModel.bmiStatus
 
     Box(
         modifier = Modifier
@@ -93,7 +81,7 @@ fun DashboardScreen(
                         )
                         TextInput(
                             value = weight,
-                            onValueChange = { weight = it },
+                            onValueChange = { dashboardViewModel.onWeightChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             placeholder = stringResource(R.string.dashboard_weight_placeholder),
                             keyboardType = KeyboardType.Number,
@@ -110,21 +98,15 @@ fun DashboardScreen(
 
                         TextInput(
                             value = height,
-                            onValueChange = { height = it },
+                            onValueChange = { dashboardViewModel.onHeightChange(it) },
                             modifier = Modifier.fillMaxWidth(),
                             placeholder = stringResource(R.string.dashboard_height_placeholder),
                             keyboardType = KeyboardType.Number,
                         )
-
                     }
+
                     Button(
-                        onClick = {
-                            bmi = bmiCalculate(
-                                weightUser = weight.toDouble(),
-                                heightUser = height.toDouble()
-                            )
-                            bmiStatus = getBmiStatus(bmi)
-                        },
+                        onClick = { dashboardViewModel.calculateBmi() },
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5783AF))
                     ) {
                         Text(stringResource(R.string.dashboard_calculate_button))
@@ -155,10 +137,4 @@ fun DashboardScreen(
             }
         }
     }
-}
-
-@Preview(showSystemUi = true)
-@Composable
-private fun DashboardScreenPreview() {
-    DashboardScreen(null,null)
 }
