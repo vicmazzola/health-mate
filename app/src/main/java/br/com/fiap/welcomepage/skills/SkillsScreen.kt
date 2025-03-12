@@ -19,10 +19,6 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CheckboxDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,32 +29,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import br.com.fiap.welcomepage.R
 import br.com.fiap.welcomepage.ui.theme.Montserrat
 
 @Composable
-fun SkillsScreen(navController: NavController?) {
+fun SkillsScreen(
+    navController: NavController?,
+    skillsViewModel: SkillsViewModel = viewModel()
+) {
 
-    var running by remember {
-        mutableStateOf(false)
-    }
+    val running = skillsViewModel.running
+    val cycling = skillsViewModel.cycling
+    val swimming = skillsViewModel.swimming
+    val weightlifting = skillsViewModel.weightlifting
+    val hiit = skillsViewModel.hiit
 
-    var cycling by remember {
-        mutableStateOf(false)
-    }
-
-    var swimming by remember {
-        mutableStateOf(false)
-    }
-
-    var weightlifting by remember {
-        mutableStateOf(false)
-    }
-
-    var hiit by remember {
-        mutableStateOf(false)
-    }
 
     Box(
         modifier = Modifier
@@ -122,7 +109,7 @@ fun SkillsScreen(navController: NavController?) {
                             Checkbox(
                                 checked = running,
                                 onCheckedChange = { isSelected ->
-                                    running = isSelected
+                                    skillsViewModel.onRunningChange(isSelected)
                                 },
                                 colors = CheckboxDefaults.colors(
                                     checkedColor = Color(0xFF03A9F4),
@@ -145,7 +132,7 @@ fun SkillsScreen(navController: NavController?) {
                             Checkbox(
                                 checked = cycling,
                                 onCheckedChange = { isSelected ->
-                                    cycling = isSelected
+                                    skillsViewModel.onCyclingChange(isSelected)
                                 },
                                 colors = CheckboxDefaults.colors(
                                     checkedColor = Color(0xFF03A9F4),
@@ -168,7 +155,7 @@ fun SkillsScreen(navController: NavController?) {
                             Checkbox(
                                 checked = swimming,
                                 onCheckedChange = { isSelected ->
-                                    swimming = isSelected
+                                    skillsViewModel.onSwimmingChange(isSelected)
                                 },
                                 colors = CheckboxDefaults.colors(
                                     checkedColor = Color(0xFF03A9F4),
@@ -191,7 +178,7 @@ fun SkillsScreen(navController: NavController?) {
                             Checkbox(
                                 checked = weightlifting,
                                 onCheckedChange = { isSelected ->
-                                    weightlifting = isSelected
+                                    skillsViewModel.onWeightliftingChange(isSelected)
                                 },
                                 colors = CheckboxDefaults.colors(
                                     checkedColor = Color(0xFF03A9F4),
@@ -214,7 +201,7 @@ fun SkillsScreen(navController: NavController?) {
                             Checkbox(
                                 checked = hiit,
                                 onCheckedChange = { isSelected ->
-                                    hiit = isSelected
+                                    skillsViewModel.onHiitChange(isSelected)
                                 },
                                 colors = CheckboxDefaults.colors(
                                     checkedColor = Color(0xFF03A9F4),
